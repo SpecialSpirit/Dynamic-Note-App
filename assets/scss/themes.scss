@@ -1,0 +1,43 @@
+$themes: (
+  light: (primary-a0: #c12121,
+    primary-a10: #cc4337,
+    primary-a20: #d65e4d,
+    primary-a30: #e07664,
+    secondary-a0: #1f1f1f,
+    secondary-a10: #0a0a0a,
+    surface-a0: #f3fcf2,
+    surface-a10: #e2ebe1,
+    surface-a20: #d1d8d0,
+    surface-a30: #8e908e,
+  ),
+  dark: (primary-a0: #c12121,
+    primary-a10: #cc4337,
+    primary-a20: #d65e4d,
+    primary-a30: #e07664,
+    secondary-a0: #edfce6,
+    secondary-a10: #effce9,
+    surface-a0: #121212,
+    surface-a10: #282828,
+    surface-a20: #3f3f3f,
+    surface-a30: #575757,
+  )
+);
+
+
+@mixin generate-theme-vars($themes-map) {
+  @each $theme-name, $theme-map in $themes-map {
+    .theme--#{$theme-name} {
+      @each $key, $value in $theme-map {
+        --#{$key}: #{$value};
+      }
+    }
+  }
+}
+
+:root {
+  @each $k, $v in map-get($themes, light) {
+    --#{$k}: #{$v};
+  }
+}
+
+@include generate-theme-vars($themes);

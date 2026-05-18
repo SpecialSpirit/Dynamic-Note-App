@@ -1,0 +1,305 @@
+:root {
+  --primary-a0: #c12121;
+  --primary-a10: #cc4337;
+  --primary-a20: #d65e4d;
+  --primary-a30: #e07664;
+  --secondary-a0: #1f1f1f;
+  --secondary-a10: #0a0a0a;
+  --surface-a0: #f3fcf2;
+  --surface-a10: #e2ebe1;
+  --surface-a20: #d1d8d0;
+  --surface-a30: #8e908e;
+}
+
+.theme--light {
+  --primary-a0: #c12121;
+  --primary-a10: #cc4337;
+  --primary-a20: #d65e4d;
+  --primary-a30: #e07664;
+  --secondary-a0: #1f1f1f;
+  --secondary-a10: #0a0a0a;
+  --surface-a0: #f3fcf2;
+  --surface-a10: #e2ebe1;
+  --surface-a20: #d1d8d0;
+  --surface-a30: #8e908e;
+}
+
+.theme--dark {
+  --primary-a0: #c12121;
+  --primary-a10: #cc4337;
+  --primary-a20: #d65e4d;
+  --primary-a30: #e07664;
+  --secondary-a0: #edfce6;
+  --secondary-a10: #effce9;
+  --surface-a0: #121212;
+  --surface-a10: #282828;
+  --surface-a20: #3f3f3f;
+  --surface-a30: #575757;
+}
+
+.sidebar {
+  flex: 0 0 20%;
+  max-width: 20%;
+  height: 100dvh;
+  background-color: var(--surface-a10);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+.sidebar .sidebar-time {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-a0);
+}
+.sidebar .category-nav {
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+}
+.sidebar .category-nav .category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100dvb;
+  transition: background-color 200ms ease, color 200ms ease;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--surface-a0);
+}
+
+#theme-switch {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+#theme-switch svg {
+  fill: var(--secondary-a10);
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  transition: opacity 200ms ease;
+}
+#theme-switch svg:first-child {
+  opacity: 1;
+}
+#theme-switch svg:last-child {
+  opacity: 0;
+}
+
+.theme--dark #theme-switch svg:first-child {
+  opacity: 0;
+}
+.theme--dark #theme-switch svg:last-child {
+  opacity: 1;
+}
+
+.category-item {
+  margin-bottom: 0.8rem;
+}
+.category-item.active .category-btn {
+  background-color: var(--primary-a20);
+}
+.category-item .category-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background: transparent;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(47, 4, 4, 0.3);
+}
+.category-item .category-btn:hover {
+  background-color: var(--primary-a10);
+}
+.category-item .category-btn .card-title {
+  margin: 0.5rem;
+  color: var(--secondary-a0);
+}
+
+.sidebar-bottom {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.sidebar-bottom #category-add {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background: var(--primary-a0);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(47, 4, 4, 0.3);
+}
+.sidebar-bottom #category-add:hover {
+  background-color: var(--primary-a10);
+}
+.sidebar-bottom #category-add .card-title {
+  margin: 0.5rem;
+  color: var(--secondary-a0);
+}
+
+.content {
+  flex: 0 0 80%;
+  max-width: 80%;
+  background-image: url("../img/lof.jpg");
+  background-size: cover;
+  padding: 0.5rem;
+  column-count: 2;
+  column-gap: 0.5rem;
+}
+.content .card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-auto-rows: masonry;
+  gap: 0rem;
+  column-count: 2;
+  column-gap: 1rem;
+}
+.content .card .card-content {
+  break-inside: avoid;
+  width: 100%;
+  min-height: 100px;
+  background-color: var(--surface-a20);
+  border-radius: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(47, 4, 4, 0.3);
+}
+.content .card .card-content .card-title {
+  margin: 0.5rem;
+  color: var(--secondary-a0);
+}
+.content .card .card-content p {
+  display: inline-block;
+  color: var(--secondary-a0);
+  margin-block-start: 0;
+  margin: 0px;
+}
+.content .card .card-content .card-delete {
+  position: sticky;
+  top: 0.2rem;
+  left: 0.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.content .card .min-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  transition: box-shadow 200ms ease, color 200ms ease;
+}
+
+.model {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+}
+.model .model-content {
+  background-color: var(--surface-a10);
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(47, 4, 4, 0.3);
+  width: 90%;
+  max-width: 500px;
+}
+.model .model-content .model-title {
+  margin-top: 0;
+  color: var(--secondary-a0);
+}
+.model .model-content .model-textarea {
+  width: 100%;
+  height: 150px;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(47, 4, 4, 0.3);
+  resize: none;
+}
+.model .model-content .model-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.model .model-content .model-actions .model-cancel,
+.model .model-content .model-actions .model-save {
+  background-color: var(--primary-a0);
+  color: var(--secondary-a0);
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+.model .model-content .model-actions .model-cancel:hover,
+.model .model-content .model-actions .model-save:hover {
+  background-color: var(--primary-a10);
+}
+
+@media (min-width: 425px) {
+  .navbar {
+    column-count: 1;
+  }
+}
+@media (min-width: 1024px) {
+  .navbar {
+    column-count: 2;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
