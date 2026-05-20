@@ -1,0 +1,83 @@
+@use "../abstracts/variables" as *;
+
+.content {
+    flex: 0 0 80%;
+    max-width: 80%;
+    background-image: url("../img/lof.jpg");
+    background-size: cover;
+    padding: $spacing-small;
+    column-count: 3;
+    column-gap: $spacing-small;
+
+    .card {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        grid-auto-rows: masonry;
+        gap: 0rem;
+        column-count: 2;
+        column-gap: $spacing-small;
+
+        .card-content {
+            break-inside: avoid;
+            width: 100%;
+            min-height: 100px;
+            background-color: var(--surface-a20);
+            border-radius: 0.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: $spacing-large;
+            transition: background-color 0.2s ease;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-top: $border-medium solid rgba(47, 4, 4, 0.3);
+
+            .card-title {
+                margin: $spacing-small;
+                color: var(--secondary-a0);
+            }
+
+            p {
+                display: inline-block;
+                color: var(--secondary-a0);
+                margin-block-start: 0;
+                margin: 0px;
+            }
+
+            .card-delete {
+                position: absolute;
+                top: 0.2rem;
+                right: 0.2rem;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+            }
+        }
+
+        .card-content:hover {
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+            transition: box-shadow 200ms ease, color 200ms ease;
+        }
+
+
+    }
+    @media (min-width: 480px) {
+        .content{
+            column-count: 1;
+        }
+    }
+
+    @media (min-width: 1024px) {
+          .content{
+            column-count: 1;
+        }}
+
+    @media (min-width: 1440px) {
+        .content{
+            column-count: 3;
+        }
+    }
+}

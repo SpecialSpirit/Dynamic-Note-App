@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $themes: (
   light: (primary-a0: #c12121,
     primary-a10: #cc4337,
@@ -24,7 +26,7 @@ $themes: (
 );
 
 
-@mixin generate-theme-vars($themes-map) {
+@mixin theme-variables($themes-map) {
   @each $theme-name, $theme-map in $themes-map {
     .theme--#{$theme-name} {
       @each $key, $value in $theme-map {
@@ -35,9 +37,9 @@ $themes: (
 }
 
 :root {
-  @each $k, $v in map-get($themes, light) {
+  @each $k, $v in map.get($themes, light) {
     --#{$k}: #{$v};
   }
 }
 
-@include generate-theme-vars($themes);
+@include theme-variables($themes);
