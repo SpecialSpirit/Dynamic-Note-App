@@ -5,12 +5,14 @@
     max-width: 20%;
     height: 100dvh;
     background-color: var(--surface-a10);
-    padding: $spacing-small;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: sticky;
     top: 0;
+    z-index: 1;
 
     #sidebar-button {
         background: none;
@@ -25,8 +27,8 @@
         svg {
             fill: var(--primary-a0);
             stroke: var(--secondary-a0);
-            width: 24px;
-            height: 24px;
+            width: $button-medium;
+            height: $button-medium;
         }
     }
 
@@ -38,17 +40,90 @@
         color: var(--secondary-a0);
     }
 
-    .category-nav {
-        width: 100%;
-        flex: 1;
-        overflow-y: auto;
+}
 
-        .category-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+.category-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    //flex: 1;
+    overflow-y: hidden;
+
+    .category-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .category-item {
+        position: relative;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        flex-direction: row;
+        padding: $spacing-small;
+
+        &.active .category-btn {
+            background-color: var(--surface-a20);
+        }
+
+        &.active::before {
+            content: ' ';
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            bottom: 0;
+            width: 0.25rem;
+            height: 70%;
+            background-color: var(--primary-a0);
+            opacity: 1;
+            transition: opacity 0.2s ease;
+            border-radius: 0 $border-medium $border-medium 0;
+            z-index: 3;
+        }
+
+        .category-btn {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            text-align: left;
+            padding: $spacing-small;
+            border-radius: $border-small;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            background: transparent;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(47, 4, 4, 0.3);
+
+            &:hover {
+                background-color: var(--primary-a10);
+            }
+
+            .card-title {
+                margin: $spacing-small;
+                color: var(--secondary-a0);
+            }
         }
     }
 
+    #category-add {
+        width: $button-medium;
+        height: $button-medium;
+        margin: $spacing-medium;
+        padding: 0;
+        border: 0;
+        cursor: pointer;
+        background: transparent;
+        color: blue;
+
+        path {
+            fill: var(--primary-a10);
+            stroke: var(--secondary-a10);
+        }
+    }
 
 }

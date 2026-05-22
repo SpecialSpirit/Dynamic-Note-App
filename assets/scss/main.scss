@@ -70,45 +70,14 @@ body {
     }
 }
 
-.category-item {
-    margin-bottom: $spacing-medium;
 
-    &.active {
-        .category-btn {
-            background-color: var(--primary-a20);
-        }
-    }
-
-    .category-btn {
-        width: 100%;
-        text-align: left;
-        padding: $spacing-small;
-        border-radius: $border-large;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-        background: transparent;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(47, 4, 4, 0.3);
-
-        &:hover {
-            background-color: var(--primary-a10);
-        }
-
-        .card-title {
-            margin: $spacing-small;
-            color: var(--secondary-a0);
-        }
-    }
-}
 
 
 .sidebar-bottom {
     width: 100%;
     margin-bottom: $spacing-large;
 
-    #category-add {
+    #card-add {
         width: 100%;
         text-align: center;
         padding: $spacing-small;
