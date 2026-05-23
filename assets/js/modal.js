@@ -1,5 +1,5 @@
 const modal = document.querySelector('.model');
-const addNoteBtn = document.getElementById('card-add');
+const addNoteBtn = document.getElementById('card-add-button');
 const modalClose = document.querySelector('.model-cancel');
 const modalSave = document.querySelector('.model-save');
 const modalTextarea = document.querySelector('.model-textarea');
