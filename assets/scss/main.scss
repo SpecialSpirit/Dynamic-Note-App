@@ -161,15 +161,17 @@ body {
 
 .card-checkbox:checked {
     background: var(--primary-a0);
-    border:none;
+    border: none;
 
-    &+ .card-text {
+    &+.card-text {
         text-decoration: line-through;
     }
 }
-.checkbox-wrapper:has(.card-checkbox:checked) + .card-text {
+
+.checkbox-wrapper:has(.card-checkbox:checked)+.card-text {
     text-decoration: line-through;
 }
+
 .card-checkbox:checked::after {
     content: "";
     position: absolute;
