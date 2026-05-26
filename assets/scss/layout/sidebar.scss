@@ -14,15 +14,22 @@
     top: 0;
     z-index: 1;
 
+}
+
+.sidebar-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: $spacing-small;        
     #sidebar-button {
+        display: block;
+        position: relative;
+        height: 40px;
+        width: 40px;
         background: none;
         border: none;
         cursor: pointer;
         padding: 0;
-        display: inline-block;
-        position: absolute;
-        right: $spacing-medium;
-        margin-top: $spacing-small;
 
         svg {
             fill: var(--primary-a0);
@@ -32,14 +39,64 @@
         }
     }
 
+    #theme-switch {
+        position: relative;
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+
+        svg {
+            fill: var(--secondary-a10);
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            transition: opacity 200ms ease;
+        }
+
+
+        svg:first-child {
+            opacity: 1;
+        }
+
+        svg:last-child {
+            opacity: 0;
+        }
+
+
+    }
+
     .sidebar-time {
-        font-size: 1.5rem;
+        width: 100%;
+        padding: $spacing-medium;
+        margin-top: $spacing-medium;
+        
+        position: relative;
+        font-size: 3.0rem;
         font-weight: bold;
         margin-top: $spacing-large;
         margin-bottom: $spacing-large;
         color: var(--secondary-a0);
-    }
+        text-align: center;
 
+         #local-time-label {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: normal;
+            margin-bottom: $spacing-small;
+            color: var(--secondary-a10);
+        }
+
+        .sidebar-time-clock {
+            display: block;
+        }
+    }
 }
 
 .category-nav {

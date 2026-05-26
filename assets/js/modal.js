@@ -26,3 +26,22 @@ modalSave.addEventListener('click', () => {
 
 });
 
+// addNoteBtn.addEventListener('click', () => {
+//     if (modal.style.visibility === 'visible') {
+//         notesContainer.style.animation = 'fadeUp 300ms ease';
+//     }
+//     else {
+//         notesContainer.style.animation = 'none';
+//     }
+
+// });
+
+addNoteBtn.addEventListener("click", () => {
+    modal.classList.add("active");
+});
+
+modalClose.addEventListener("click", () => {
+    modal.classList.remove("active");
+});
+
+

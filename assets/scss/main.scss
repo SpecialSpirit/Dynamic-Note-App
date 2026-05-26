@@ -12,8 +12,7 @@ html,
 body {
     margin: 0px;
     padding: 0px;
-    height: 100dvb;
-    transition: background-color 200ms ease, color 200ms ease;
+    height: 100dvh;
     font-family: "Roboto Condensed", sans-serif;
 }
 
@@ -22,39 +21,6 @@ body {
     display: flex;
     flex-direction: row;
     background-color: var(--surface-a0);
-}
-
-#theme-switch {
-    position: fixed;
-    top: $spacing-small;
-    right: $spacing-small;
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-
-    svg {
-        fill: var(--secondary-a10);
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        transition: opacity 200ms ease;
-    }
-
-
-    svg:first-child {
-        opacity: 1;
-    }
-
-    svg:last-child {
-        opacity: 0;
-    }
 }
 
 .theme--dark {
@@ -71,8 +37,6 @@ body {
 }
 
 
-
-
 .card-add {
     position: absolute;
     display: inline-block;
@@ -82,7 +46,6 @@ body {
     margin: $spacing-large;
 
     #card-add-button {
-        isolation: isolate;
         position: relative;
         width: 4rem;
         height: 4rem;
@@ -162,13 +125,10 @@ body {
 .card-checkbox:checked {
     background: var(--primary-a0);
     border: none;
-
-    &+.card-text {
-        text-decoration: line-through;
-    }
 }
 
-.checkbox-wrapper:has(.card-checkbox:checked)+.card-text {
+.card-header:has(.card-checkbox:checked)+.card-text, 
+.checkbox-wrapper:has(.card-checkbox:checked)+.card-title{
     text-decoration: line-through;
 }
 
@@ -184,6 +144,3 @@ body {
     top: 3px;
 }
 
-.card-checkbox:checked+.card-text {
-    text-decoration: line-through;
-}

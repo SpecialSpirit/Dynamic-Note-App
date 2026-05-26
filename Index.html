@@ -13,27 +13,31 @@
 </head>
 
 <body>
-    <button id="theme-switch">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-            <path
-                d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z" />
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-            <path
-                d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z" />
-        </svg>
-    </button>
+
     <div class="container">
         <aside class="sidebar">
-            <button id="sidebar-button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M4 18L20 18" stroke-width="2" stroke-linecap="round" />
-                    <path d="M4 12L20 12" stroke-width="2" stroke-linecap="round" />
-                    <path d="M4 6L20 6" stroke-width="2" stroke-linecap="round" />
-                </svg>
-            </button>
-            <div class="sidebar-time">
-                <time class="sidebar-time-clock" id="localTime">00:00</time>
+            <div class="sidebar-header">
+                <button id="sidebar-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M4 18L20 18" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 12L20 12" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 6L20 6" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="sidebar-time">
+                    <time class="sidebar-time-clock" id="localTime">00:00</time>
+                    <span for="localTime" id="local-time-label">Friday, November 21</span>
+                </div>
+                <button id="theme-switch">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                        <path
+                            d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                        <path
+                            d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z" />
+                    </svg>
+                </button>
             </div>
             <nav class="category-nav">
                 <ul class="category-list">
@@ -64,62 +68,115 @@
         <div class="content">
             <section class="card">
                 <article class="card-content">
-                    <label class="checkbox-wrapper">
-                        <input type="checkbox" class="card-checkbox">
-                    </label>
+                    <span class="card-header">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" class="card-checkbox">
+                        </label>
+                        <h5 class="card-title">NOTE</h5>
+                        <button class="card-edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                <path
+                                    d="M535.6 85.7C513.7 63.8 478.3 63.8 456.4 85.7L432 110.1L529.9 208L554.3 183.6C576.2 161.7 576.2 126.3 554.3 104.4L535.6 85.7zM236.4 305.7C230.3 311.8 225.6 319.3 222.9 327.6L193.3 416.4C190.4 425 192.7 434.5 199.1 441C205.5 447.5 215 449.7 223.7 446.8L312.5 417.2C320.7 414.5 328.2 409.8 334.4 403.7L496 241.9L398.1 144L236.4 305.7zM160 128C107 128 64 171 64 224L64 480C64 533 107 576 160 576L416 576C469 576 512 533 512 480L512 384C512 366.3 497.7 352 480 352C462.3 352 448 366.3 448 384L448 480C448 497.7 433.7 512 416 512L160 512C142.3 512 128 497.7 128 480L128 224C128 206.3 142.3 192 160 192L256 192C273.7 192 288 177.7 288 160C288 142.3 273.7 128 256 128L160 128z" />
+                            </svg>
+                        </button>
+                        <button class="card-delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path
+                                    d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56Z" />
+                            </svg></button>
+                    </span>
                     <p class="card-text">Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
                         Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
-                        Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
-                        Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
-                         Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
-                        Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
-                        Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
-                    <button class="card-delete">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path
-                                d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56Z" />
-                        </svg></button>
-                </article>
-             <article class="card-content">
-                    <label class="checkbox-wrapper">
-                        <input type="checkbox" class="card-checkbox">
-                    </label>
-                    <p class="card-text">Lorem lore ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <button class="card-delete">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path
-                                d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56Z" />
-                        </svg></button>
-                </article>
-                 <article class="card-content">
-                    <label class="checkbox-wrapper">
-                        <input type="checkbox" class="card-checkbox">
-                    </label>
-                    <p class="card-text">Lorem lore ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <button class="card-delete">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path
-                                d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56Z" />
-                        </svg></button>
                 </article>
                 <article class="card-content">
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <button class="card-delete">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path
-                                d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56Z" />
-                        </svg></button>
+                    <span class="card-header">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" class="card-checkbox">
+                        </label>
+                        <h5 class="card-title">NOTE</h5>
+                        <button class="card-edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                <path
+                                    d="M535.6 85.7C513.7 63.8 478.3 63.8 456.4 85.7L432 110.1L529.9 208L554.3 183.6C576.2 161.7 576.2 126.3 554.3 104.4L535.6 85.7zM236.4 305.7C230.3 311.8 225.6 319.3 222.9 327.6L193.3 416.4C190.4 425 192.7 434.5 199.1 441C205.5 447.5 215 449.7 223.7 446.8L312.5 417.2C320.7 414.5 328.2 409.8 334.4 403.7L496 241.9L398.1 144L236.4 305.7zM160 128C107 128 64 171 64 224L64 480C64 533 107 576 160 576L416 576C469 576 512 533 512 480L512 384C512 366.3 497.7 352 480 352C462.3 352 448 366.3 448 384L448 480C448 497.7 433.7 512 416 512L160 512C142.3 512 128 497.7 128 480L128 224C128 206.3 142.3 192 160 192L256 192C273.7 192 288 177.7 288 160C288 142.3 273.7 128 256 128L160 128z" />
+                            </svg>
+                        </button>
+                        <button class="card-delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path
+                                    d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56Z" />
+                            </svg></button>
+                    </span>
+                    <p class="card-text">Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
+                        Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </article>
+                <article class="card-content">
+                    <span class="card-header">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" class="card-checkbox">
+                        </label>
+                        <h5 class="card-title">NOTE</h5>
+                        <button class="card-edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                <path
+                                    d="M535.6 85.7C513.7 63.8 478.3 63.8 456.4 85.7L432 110.1L529.9 208L554.3 183.6C576.2 161.7 576.2 126.3 554.3 104.4L535.6 85.7zM236.4 305.7C230.3 311.8 225.6 319.3 222.9 327.6L193.3 416.4C190.4 425 192.7 434.5 199.1 441C205.5 447.5 215 449.7 223.7 446.8L312.5 417.2C320.7 414.5 328.2 409.8 334.4 403.7L496 241.9L398.1 144L236.4 305.7zM160 128C107 128 64 171 64 224L64 480C64 533 107 576 160 576L416 576C469 576 512 533 512 480L512 384C512 366.3 497.7 352 480 352C462.3 352 448 366.3 448 384L448 480C448 497.7 433.7 512 416 512L160 512C142.3 512 128 497.7 128 480L128 224C128 206.3 142.3 192 160 192L256 192C273.7 192 288 177.7 288 160C288 142.3 273.7 128 256 128L160 128z" />
+                            </svg>
+                        </button>
+                        <button class="card-delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path
+                                    d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56Z" />
+                            </svg></button>
+                    </span>
+                    <p class="card-text">Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
+                        Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </article>
+                <article class="card-content">
+                    <span class="card-header">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" class="card-checkbox">
+                        </label>
+                        <h5 class="card-title">NOTE</h5>
+                        <button class="card-edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                <path
+                                    d="M535.6 85.7C513.7 63.8 478.3 63.8 456.4 85.7L432 110.1L529.9 208L554.3 183.6C576.2 161.7 576.2 126.3 554.3 104.4L535.6 85.7zM236.4 305.7C230.3 311.8 225.6 319.3 222.9 327.6L193.3 416.4C190.4 425 192.7 434.5 199.1 441C205.5 447.5 215 449.7 223.7 446.8L312.5 417.2C320.7 414.5 328.2 409.8 334.4 403.7L496 241.9L398.1 144L236.4 305.7zM160 128C107 128 64 171 64 224L64 480C64 533 107 576 160 576L416 576C469 576 512 533 512 480L512 384C512 366.3 497.7 352 480 352C462.3 352 448 366.3 448 384L448 480C448 497.7 433.7 512 416 512L160 512C142.3 512 128 497.7 128 480L128 224C128 206.3 142.3 192 160 192L256 192C273.7 192 288 177.7 288 160C288 142.3 273.7 128 256 128L160 128z" />
+                            </svg>
+                        </button>
+                        <button class="card-delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path
+                                    d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56Z" />
+                            </svg></button>
+                    </span>
+                    <p class="card-text">Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
+                        Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
                 </article>
 
                 <article class="card-content">
-                    <h5 class="card-title">NOTE</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <button class="card-delete">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path
-                                d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56Z" />
-                        </svg></button>
+                    <span class="card-header">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" class="card-checkbox">
+                        </label>
+                        <h5 class="card-title">NOTE</h5>
+                        <button class="card-edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                <path
+                                    d="M535.6 85.7C513.7 63.8 478.3 63.8 456.4 85.7L432 110.1L529.9 208L554.3 183.6C576.2 161.7 576.2 126.3 554.3 104.4L535.6 85.7zM236.4 305.7C230.3 311.8 225.6 319.3 222.9 327.6L193.3 416.4C190.4 425 192.7 434.5 199.1 441C205.5 447.5 215 449.7 223.7 446.8L312.5 417.2C320.7 414.5 328.2 409.8 334.4 403.7L496 241.9L398.1 144L236.4 305.7zM160 128C107 128 64 171 64 224L64 480C64 533 107 576 160 576L416 576C469 576 512 533 512 480L512 384C512 366.3 497.7 352 480 352C462.3 352 448 366.3 448 384L448 480C448 497.7 433.7 512 416 512L160 512C142.3 512 128 497.7 128 480L128 224C128 206.3 142.3 192 160 192L256 192C273.7 192 288 177.7 288 160C288 142.3 273.7 128 256 128L160 128z" />
+                            </svg>
+                        </button>
+                        <button class="card-delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path
+                                    d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56Z" />
+                            </svg></button>
+                    </span>
+                    <p class="card-text">Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
+                        Lorem lore ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
                 </article>
             </section>
         </div>
@@ -135,10 +192,10 @@
         </div>
     </div>
     <div class="model">
-        <div class="model-content">
-            <h5 class="model-title">New Note</h5>
+        <div class="model-container">
+            <h5 class="model-title">Create New Note</h5>
             <form action="#" method="get">
-                <textarea class="model-textarea" placeholder="Write your note here..."></textarea>
+                <textarea class="model-textarea" name="note" placeholder="Write your note here..."></textarea>
                 <div class="model-actions">
                     <button class="model-cancel">Cancel</button>
                     <button class="model-save">Save</button>
