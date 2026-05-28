@@ -1,10 +1,43 @@
 @use "../abstracts/variables" as *;
 
 .content {
+    position: relative;
     flex: 0 0 80%;
     max-width: 80%;
     background-image: url("../img/lof.jpg");
     background-size: cover;
+}
+
+
+.content-header {
+    width: 100%;
+    padding: $spacing-small;
+    background-color: var(--surface-a10);
+    border-bottom: 1px solid rgba(47, 4, 4, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 2;
+
+    #todo-filter {
+        width: 100%;
+        padding: $spacing-small;
+        border-radius: $border-small;
+        border: 1px solid rgba(47, 4, 4, 0.3);
+        background-color: transparent;
+        color: var(--secondary-a0);
+
+        &::placeholder {
+            color: var(--secondary-a30);
+        }
+    }
+}
+
+
+
+.content-body {
+    position: relative;
+    height: auto;
     padding: $spacing-small;
     column-count: 3;
     column-gap: $spacing-small;
@@ -32,6 +65,7 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
+            word-break: break-word;
 
             .card-header {
                 display: flex;
@@ -46,29 +80,28 @@
                     width: 100%;
                     color: var(--primary-a10);
                     font-size: 1.2rem;
-                     font-weight: bold;
+                    font-weight: bold;
                     margin: 0px;
                 }
 
                 .card-edit {
                     display: block;
                     position: relative;
-                    display: block;
-                    min-width: 1.1rem;
-                    height: 1.1rem;
+                    min-width: 1.5rem;
+                    height: 1.5rem;
                     background: none;
                     border: none;
                     cursor: pointer;
                     padding: 0;
-                    fill: var(--surface-a30);
+                    font-size: $spacing-medium;
+                    color: var(--surface-a30);
 
                     &:hover {
-                        fill: var(--primary-a20);
+                        color: var(--primary-a20);
                     }
                 }
 
                 .card-delete {
-                    align-self: flex-end;
                     position: relative;
                     display: block;
                     min-width: 1.5rem;
@@ -77,10 +110,11 @@
                     border: none;
                     cursor: pointer;
                     padding: 0;
-                    fill: var(--surface-a30);
+                    font-size: $spacing-medium;
+                    color: var(--surface-a30);
 
                     &:hover {
-                        fill: var(--primary-a20);
+                        color: var(--primary-a20);
                     }
                 }
 

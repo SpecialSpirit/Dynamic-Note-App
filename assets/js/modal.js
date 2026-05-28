@@ -12,19 +12,19 @@ modalClose.addEventListener('click', () => {
     modal.style.visibility = 'hidden';
     modal.style.opacity = '0';
 });     
-modalSave.addEventListener('click', () => {
-    const noteText = modalTextarea.value.trim();   
-    if (noteText) {
-        const noteElement = document.createElement('div');
-        noteElement.classList.add('note');  
+// modalSave.addEventListener('click', () => {
+//     const noteText = modalTextarea.value.trim();   
+//     if (noteText) {
+//         const noteElement = document.createElement('div');
+//         noteElement.classList.add('note');  
 
-        noteElement.textContent = noteText;
-        notesContainer.appendChild(noteElement);    
-        modal.style.visibility = 'hidden';
-        modal.style.opacity = '0';
-    }
+//         noteElement.textContent = noteText;
+//         notesContainer.appendChild(noteElement);    
+//         modal.style.visibility = 'hidden';
+//         modal.style.opacity = '0';
+//     }
 
-});
+// });
 
 // addNoteBtn.addEventListener('click', () => {
 //     if (modal.style.visibility === 'visible') {

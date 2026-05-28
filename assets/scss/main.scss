@@ -14,6 +14,7 @@ body {
     padding: 0px;
     height: 100dvh;
     font-family: "Roboto Condensed", sans-serif;
+    overflow-x: hidden;
 }
 
 .container {
@@ -22,6 +23,10 @@ body {
     flex-direction: row;
     background-color: var(--surface-a0);
 }
+
+
+
+
 
 .theme--dark {
     #theme-switch {
@@ -36,68 +41,83 @@ body {
     }
 }
 
+.toast-alert {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: absolute;
+    bottom: 5.8rem;
+    right: 0;
+    z-index: 3;
+    .alert {
+        position: relative;
+        min-width: auto;
+        padding: $spacing-small;
+        border-radius: $border-small;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-out, opacity 0.8s ease;
+  
+
+        &.alert-danger {
+
+            background-color: #f09aa1;
+        }
+
+        &.alert-success {
+            background-color: #92eca7;
+        }
+
+        &.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+
 
 .card-add {
-    position: absolute;
+    position: fixed;
     display: inline-block;
     bottom: 0;
     right: 0;
     padding: 0;
+    min-width: 6rem;
     margin: $spacing-large;
 
-    #card-add-button {
+    .card-add-wrapper {
         position: relative;
-        width: 4rem;
-        height: 4rem;
-        padding: $spacing-small;
-        border-radius: $border-circle;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-        background: var(--primary-a0);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        // border: 1rem solid rgba(47, 4, 4, 0.3);
+        display: flex;
+        align-items: center;
+        background-color: var(--surface-a10);
+        border-radius: $border-small ;
+        padding: $spacing-medium;
+
+        .todo-add {
+            width: 18rem;
+            color: var(--secondary-a0);
+            border: none;
+            background-color: transparent;
+
+
+        }
+
+        .todo-add:focus {
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
 
         .card-add-icon {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            align-items: center;
-            justify-content: center;
-            fill: var(--surface-a10);
+            position: relative;
+            padding: $spacing-small;
+            color: var(--primary-a10);
+            background-color: var(--surface-a20);
+            border-radius: $button-small ;
+            border: none;
 
         }
-
-        &:hover {
-            background-color: var(--primary-a20);
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            border-radius: $border-circle;
-            background-color: var(--primary-a0);
-            opacity: 0.5;
-            transform-origin: center;
-            animation: button-animation 1.5s infinite;
-            z-index: 0;
-        }
-
-        @keyframes button-animation {
-            0% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-
-            100% {
-                transform: scale(2);
-                opacity: 0;
-            }
-        }
-
     }
-
 }
 
 .checkbox-wrapper {
@@ -127,8 +147,8 @@ body {
     border: none;
 }
 
-.card-header:has(.card-checkbox:checked)+.card-text, 
-.checkbox-wrapper:has(.card-checkbox:checked)+.card-title{
+.card-header:has(.card-checkbox:checked)+.card-text,
+.checkbox-wrapper:has(.card-checkbox:checked)+.card-title {
     text-decoration: line-through;
 }
 
@@ -143,4 +163,3 @@ body {
     left: 7px;
     top: 3px;
 }
-
